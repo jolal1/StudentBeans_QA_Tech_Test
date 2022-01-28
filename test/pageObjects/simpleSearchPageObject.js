@@ -9,6 +9,22 @@ class simpleSearchPageObject extends ParentPageObject {
   verifyHomePage () {
     this.isElementEqualToExpected($('h2=Recommended For You'), 'Recommended For You')
   }
+
+  acceptAll() {
+    $("#onetrust-accept-btn-handler").click()
+  }
+
+  searchBar() {
+    $('._tf5swf').click()
+  }
+
+  enterSamsung () {
+    $('._1g5dvk1').setValue('Samsung')
+  }
+
+  verifySearchResults () {
+    this.isElementEqualToExpected($("//a//div//span[@class='_63p46ei']"), 'Samsung')
+  }
 }
 
 module.exports = simpleSearchPageObject
